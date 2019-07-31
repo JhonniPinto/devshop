@@ -1,0 +1,48 @@
+<% include ../header.ejs %>
+
+<section class="section-pagetop bg-info">
+    <div class="container clearfix">
+        <h2 class="title-page">Admin</h2>
+
+        <nav class="float-left">
+            <ol class="breadcrumb text-white">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+            </ol>
+        </nav>
+    </div> <!-- container //  -->
+</section>
+
+<section class="section-content bg padding-y">
+    <div class="container">
+        <a href="/admin/categorias/nova" class="btn btn-primary"> Nova categoria </a>
+        <br>
+        <br>
+        <div class="row">
+            <main class="col-sm-12">
+                <% categories.forEach( category => { %>
+                <article class="card card-product">
+                    <div class="card-body">
+                        <div class="row">
+                            <article class="col-sm-9">
+                                <h4 class="title"><%- category.category %></h4>
+                            </article> <!-- col.// -->
+                            <aside class="col-sm-3 border-left">
+                                    <p>
+                                        <a href="/admin/categorias/editar/<%- category.id %>" class="btn btn-primary"> Editar </a>
+                                        <a href="/admin/categorias/excluir/<%- category.id %>" class="btn btn-secondary"> Excluir </a>
+                                    </p>
+                            </aside>
+                        </div> <!-- row.// -->
+                    </div> <!-- card-body .// -->
+                </article> <!-- card product .// -->
+                <% }) %>
+            </main> <!-- col.// -->
+        </div>
+
+    </div> <!-- container .//  -->
+</section>
+
+
+
+
+<% include ../../partials/footer.ejs %>
